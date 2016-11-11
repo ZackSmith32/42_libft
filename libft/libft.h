@@ -6,7 +6,7 @@
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 12:02:11 by zsmith            #+#    #+#             */
-/*   Updated: 2016/10/06 18:03:31 by zsmith           ###   ########.fr       */
+/*   Updated: 2016/10/10 14:18:22 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,5 +108,9 @@ void				ft_puttab(char **ptr);
 t_list				*ft_tab_to_list(char **tab);
 char				*ft_strdup_c(const char *src, char c);
 int					ft_numlen(long num);
+char				*ft_strdup_n(const char *src, int n);
+char				*ft_strccat(char *s1, const char *s2, char c);
+
+
 
 #endif
