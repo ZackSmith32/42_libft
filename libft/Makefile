@@ -6,7 +6,7 @@
 #    By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/22 16:32:25 by zsmith            #+#    #+#              #
-#    Updated: 2016/10/10 14:18:46 by zsmith           ###   ########.fr        #
+#    Updated: 2016/11/12 16:02:17 by zsmith           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,7 @@ CFILES	=	ft_memset.c 	\
 			ft_numlen.c		\
 			ft_strdup_n.c	\
 			ft_strccat.c	\
+			ft_memcat.c		\
 			
 HFILES	=	libft.h
 OFILES	=	$(CFILES:.c=.o)
