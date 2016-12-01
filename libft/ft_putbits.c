@@ -6,9 +6,11 @@
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:09:07 by zsmith            #+#    #+#             */
-/*   Updated: 2016/12/01 14:10:03 by zsmith           ###   ########.fr       */
+/*   Updated: 2016/12/01 14:30:59 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putbits(int n, int bytes)
 {
