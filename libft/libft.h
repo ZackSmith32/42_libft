@@ -6,7 +6,7 @@
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 12:02:11 by zsmith            #+#    #+#             */
-/*   Updated: 2016/12/17 17:22:27 by zsmith           ###   ########.fr       */
+/*   Updated: 2016/12/17 19:29:32 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,5 @@ void				ft_putbits(int n, int bytes);
 int					ft_numlen_base(unsigned long long n, int base);
 char				*ft_itoa_base(unsigned long long n, int base);
 void				ft_color_on(int argc, ...);
-
 
 #endif
