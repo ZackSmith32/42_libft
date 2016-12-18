@@ -6,7 +6,7 @@
 #    By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/22 16:32:25 by zsmith            #+#    #+#              #
-#    Updated: 2016/12/01 14:30:55 by zsmith           ###   ########.fr        #
+#    Updated: 2016/12/17 17:23:52 by zsmith           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,6 +81,10 @@ CFILES	=	ft_memset.c 	\
 			ft_strccat.c	\
 			ft_memcat.c		\
 			ft_putbits.c	\
+			ft_itoa_base.c	\
+			ft_numlen_base.c\
+			ft_color_on.c	\
+
 			
 HFILES	=	libft.h
 OFILES	=	$(CFILES:.c=.o)
@@ -96,7 +100,7 @@ main:
 
 complib:
 	@ gcc $(FLAGS) $(CFILES) 
-	@ ar rc $(NAME) $(OFILES) $(HFILES)
+	@ ar rc $(NAME) $(OFILES)
 
 clean:
 	@ /bin/rm -f $(OFILES)

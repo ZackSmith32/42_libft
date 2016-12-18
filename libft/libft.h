@@ -6,7 +6,7 @@
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 12:02:11 by zsmith            #+#    #+#             */
-/*   Updated: 2016/12/01 14:30:45 by zsmith           ###   ########.fr       */
+/*   Updated: 2016/12/17 17:22:27 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include <stdarg.h>
 
 typedef struct		s_list
 {
@@ -23,6 +24,12 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_color
+{
+	char			*c;
+	char			*code;
+}					t_color;
 
 /*
 ** Part 1
@@ -112,7 +119,9 @@ char				*ft_strdup_n(const char *src, int n);
 char				*ft_strccat(char *s1, const char *s2, char c);
 void				*ft_memcat(void *s1, void *s2);
 void				ft_putbits(int n, int bytes);
-
+int					ft_numlen_base(unsigned long long n, int base);
+char				*ft_itoa_base(unsigned long long n, int base);
+void				ft_color_on(int argc, ...);
 
 
 #endif
