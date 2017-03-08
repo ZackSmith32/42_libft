@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_word_count.c                                    :+:      :+:    :+:   */
+/*   ft_putarr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/01 20:50:14 by zsmith            #+#    #+#             */
-/*   Updated: 2017/02/27 15:53:44 by zsmith           ###   ########.fr       */
+/*   Created: 2017/02/23 23:39:55 by zsmith            #+#    #+#             */
+/*   Updated: 2017/02/28 19:31:26 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdio.h"
 
-int		ft_word_count(char const *s, char c)
+void	ft_putarr(int *a, int len)
 {
-	int		w;
 	int		i;
 
 	i = 0;
-	w = 0;
-	while (s[i] != '\0')
-	{	
-		if (i == 0 && s[i] != c)
-			w++;
-		else if (i == 0 && s[i] == c)
-			;
-		else if (
-			(s[i - 1] == c && s[i] != c)
-			&&
-			(s[i] != '\0'))
-			w++;
+	while (i < len)
+	{
+		ft_putnbr(a[i]);
+		ft_putchar(' ');
 		i++;
 	}
-	return (w);
+	ft_putchar('\n');
 }

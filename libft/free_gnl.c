@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_word_count.c                                    :+:      :+:    :+:   */
+/*   free_gnl.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/01 20:50:14 by zsmith            #+#    #+#             */
-/*   Updated: 2017/02/27 15:53:44 by zsmith           ###   ########.fr       */
+/*   Created: 2017/02/28 12:35:28 by zsmith            #+#    #+#             */
+/*   Updated: 2017/03/07 16:57:24 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdio.h"
 
-int		ft_word_count(char const *s, char c)
+void			free_gnl(t_gnl **head, int fd)
 {
-	int		w;
-	int		i;
+	t_gnl	*h;
+	t_gnl	*g;
 
-	i = 0;
-	w = 0;
-	while (s[i] != '\0')
-	{	
-		if (i == 0 && s[i] != c)
-			w++;
-		else if (i == 0 && s[i] == c)
-			;
-		else if (
-			(s[i - 1] == c && s[i] != c)
-			&&
-			(s[i] != '\0'))
-			w++;
-		i++;
+	h = *head;
+	if (h->fd == fd)
+	{
+		*head = h->next;
+		free(h->content);
+		free(h);
 	}
-	return (w);
+	else
+		while (h->next != 0)
+		{
+			g = h->next;
+			if (g->fd == fd)
+			{
+				h->next = g->next;
+				free(g->content);
+				free(g);
+				break ;
+			}
+			h = h->next;
+		}
 }

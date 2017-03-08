@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_word_count.c                                    :+:      :+:    :+:   */
+/*   ft_keyhook.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/01 20:50:14 by zsmith            #+#    #+#             */
-/*   Updated: 2017/02/27 15:53:44 by zsmith           ###   ########.fr       */
+/*   Created: 2017/02/22 10:54:20 by zsmith            #+#    #+#             */
+/*   Updated: 2017/02/28 19:33:27 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdio.h"
 
-int		ft_word_count(char const *s, char c)
+int		ft_keyhook(char key)
 {
-	int		w;
-	int		i;
+	int		bytes;
+	char	*buff;
 
-	i = 0;
-	w = 0;
-	while (s[i] != '\0')
-	{	
-		if (i == 0 && s[i] != c)
-			w++;
-		else if (i == 0 && s[i] == c)
-			;
-		else if (
-			(s[i - 1] == c && s[i] != c)
-			&&
-			(s[i] != '\0'))
-			w++;
-		i++;
+	buff = ft_memalloc(32);
+	while ((bytes = read(0, buff, 32)))
+	{
+		if (ft_strchr(buff, key))
+			break ;
 	}
-	return (w);
+	return (bytes);
 }

@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_word_count.c                                    :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/01 20:50:14 by zsmith            #+#    #+#             */
-/*   Updated: 2017/02/27 15:53:44 by zsmith           ###   ########.fr       */
+/*   Created: 2016/09/25 20:37:24 by zsmith            #+#    #+#             */
+/*   Updated: 2017/02/27 15:12:15 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdio.h"
 
-int		ft_word_count(char const *s, char c)
+long long	ft_atol(const char *str)
 {
-	int		w;
-	int		i;
+	long long	ans;
+	int			neg;
+	int			i;
 
 	i = 0;
-	w = 0;
-	while (s[i] != '\0')
-	{	
-		if (i == 0 && s[i] != c)
-			w++;
-		else if (i == 0 && s[i] == c)
-			;
-		else if (
-			(s[i - 1] == c && s[i] != c)
-			&&
-			(s[i] != '\0'))
-			w++;
+	neg = 1;
+	ans = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	if (str[i] == '-')
+	{
+		neg = -1;
 		i++;
 	}
-	return (w);
+	else if (str[i] == '+')
+		i++;
+	while (48 <= str[i] && str[i] < 58)
+	{
+		ans = str[i] - 48 + ans * 10;
+		i++;
+	}
+	return (neg * ans);
 }
