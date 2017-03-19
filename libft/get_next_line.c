@@ -1,11 +1,12 @@
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mba <mba@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/11 16:01:14 by zsmith            #+#    #+#             */
-/*   Updated: 2017/02/28 09:42:28 by zsmith           ###   ########.fr       */
+/*   Created: 2017/03/09 12:32:58 by zsmith            #+#    #+#             */
+/*   Updated: 2017/03/15 19:02:25 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +15,6 @@
 static int		check_struct(t_gnl *temp, char **line)
 {
 	int		i;
-	int		str_len;
 	char	*str;
 
 	if (ft_strlen(temp->content) == 0)
@@ -24,16 +24,13 @@ static int		check_struct(t_gnl *temp, char **line)
 		i++;
 	free(*line);
 	*line = (char *)ft_memalloc(i + 1);
-	ft_memcpy(*line, temp->content, (size_t)i);
+	ft_strncpy(*line, temp->content, (size_t)i);
 	if (temp->content[i] == 0)
 	{
 		ft_bzero(temp->content, i);
-		free(temp->content);
 		return (0);
 	}
-	str_len = ft_strlen(temp->content) - i;
-	str = ft_memalloc(str_len);
-	ft_memcpy(str, temp->content + (i + 1), (size_t)str_len);
+	str = ft_strdup(temp->content + (i + 1));
 	free(temp->content);
 	temp->content = str;
 	return (1);
@@ -77,6 +74,7 @@ static int		read_buf(int fd, t_gnl *item, char **line)
 	hld = ft_strchr(buff, '\n');
 	if (hld)
 	{
+		free(item->content);
 		item->content = ft_strdup(hld + 1);
 	}
 	free(buff);

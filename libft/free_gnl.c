@@ -6,7 +6,7 @@
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:35:28 by zsmith            #+#    #+#             */
-/*   Updated: 2017/03/07 16:57:24 by zsmith           ###   ########.fr       */
+/*   Updated: 2017/03/15 19:02:37 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void			free_gnl(t_gnl **head, int fd)
 	if (h->fd == fd)
 	{
 		*head = h->next;
-		free(h->content);
 		free(h);
+		free(h->content);
 	}
 	else
 		while (h->next != 0)
