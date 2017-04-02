@@ -91,6 +91,8 @@ CFILES	=	ft_memset.c 	\
 			free_gnl.c		\
 			ft_puterror.c	\
 			ft_isnum.c		\
+			ft_tablen.c		\
+			ft_freetab.c	\
 
 HFILES	=	libft.h
 OFILES	=	$(CFILES:.c=.o)

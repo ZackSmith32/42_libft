@@ -143,5 +143,7 @@ void				ft_putarr(int *a, int len);
 int					ft_keyhook(char key);
 void				ft_puterror(char *str);
 int					ft_isnum(char *str);
+int					ft_tablen(char **tab);
+void				ft_freetab(char **tab);
 
 #endif
