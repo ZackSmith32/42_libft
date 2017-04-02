@@ -6,7 +6,7 @@
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/09 14:27:50 by zsmith            #+#    #+#             */
-/*   Updated: 2017/03/17 00:29:31 by zsmith           ###   ########.fr       */
+/*   Updated: 2017/03/30 20:24:40 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,15 @@ int		ft_isnum(char *str)
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
+	if (i > 1)
+		return (0);
 	while (str[i] != 0)
 	{
 		if (!ft_isdigit(str[i]))
 			return (0);
 		i++;
 	}
-	return (1);
+	if (--i < 12)
+		return (1);
+	return (0);
 }
